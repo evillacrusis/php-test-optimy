@@ -1,15 +1,57 @@
-# PHP test
+# PHP Test
 
 ## 1. Installation
 
-  - create an empty database named "phptest" on your MySQL server
-  - import the dbdump.sql in the "phptest" database
-  - put your MySQL server credentials in the constructor of DB class
-  - you can test the demo script in your shell: "php index.php"
+1. **Database Setup:**
+   - Create an empty database named "phptest" on your MySQL server.
+   - Import the `dbdump.sql` into the "phptest" database.
+   - Create a `.env` file in the root directory, use `.env.example` as a template.
+   - Set the following environment variables in your `.env` file:
+   
+      ```dotenv
+      DATABASE_DSN=mysql:dbname=phptest;host=127.0.0.1
+      DATABASE_USER=root
+      DATABASE_PASSWORD=pass
 
-## 2. Expectations
+2. **Install Dependencies:**
+   - Ensure you have [Composer](https://getcomposer.org/) installed.
+   - Run `composer install` to install the project's dependencies.
 
-This simple application works, but with very old-style monolithic codebase, so do anything you want with it, to make it:
+3. **Run the Application:**
+   - You can test the demo script by running `php index.php` in your shell.
 
-  - easier to work with
-  - more maintainable# php-test-optimy
+## 2. Running Tests
+
+1. **Install PHPUnit:**
+   - If not already installed, you can install PHPUnit by running:
+     ```bash
+     composer require --dev phpunit/phpunit
+     ```
+
+2. **Run Tests:**
+   - Execute tests using PHPUnit by running:
+     ```bash
+     ./vendor/bin/phpunit
+     ```
+
+## 3. Expectations
+
+This application has been enhanced to improve the codebase from a monolithic style to a more modern, maintainable structure. Changes include:
+
+- **Refactored Code:**
+  - Improved code readability and maintainability by applying object-oriented principles and best practices.
+  - Added comments and PHPDoc for better documentation and understanding.
+
+- **Code Structure:**
+  - Introduced a `Manager` pattern for handling business logic.
+  - Separated concerns by creating `Model` classes for data representation.
+  - Use interface and dependency injection to enhance flexibility and testing.
+
+- **Database Interaction:**
+  - Replaced raw SQL queries with Doctrine DBAL for better database abstraction and easier query management.
+
+- **Testing:**
+  - Added unit tests for core functionality using PHPUnit.
+
+Feel free to explore and extend the functionality as needed.
+
