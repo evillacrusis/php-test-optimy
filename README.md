@@ -9,9 +9,13 @@
    - Set the following environment variables in your `.env` file:
    
       ```dotenv
-      DATABASE_DSN=mysql:dbname=phptest;host=127.0.0.1
+      DATABASE_HOST=localhost:3306
+      DATABASE_PORT=3306
+      DATABASE_NAME=phptest
       DATABASE_USER=root
       DATABASE_PASSWORD=pass
+      DATABASE_DRIVER=pdo_mysql
+
 
 2. **Install Dependencies:**
    - Ensure you have [Composer](https://getcomposer.org/) installed.
